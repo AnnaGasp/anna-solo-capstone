@@ -16,7 +16,7 @@ describe ("Tests fo Login", () => {
         await anna.setInput(anna.usernameField,"DevmountainTest");
         await anna.setInput(anna.passwordField,"Bookstore1234");
         await anna.click(anna.logInBtnGreen);
-        let results = await anna.getResults();
+        let results = await anna.getAccountResults();
         expect(results).toContain("DevmountainTest");
         await anna.click(anna.logOutBtn);
     });
@@ -26,7 +26,7 @@ describe ("Tests fo Login", () => {
         await anna.setInput(anna.usernameField,"DevmountainTest");
         await anna.setInput(anna.passwordField,"password");
         await anna.click(anna.logInBtnGreen);
-        let results = await anna.getResults1();
+        let results = await anna.getErrorResults();
         expect(results).toContain("Sorry, unrecognized username or password.");
     });
 
@@ -35,7 +35,7 @@ describe ("Tests fo Login", () => {
         await anna.setInput(anna.usernameField,"username");
         await anna.setInput(anna.passwordField,"Bookstore1234");
         await anna.click(anna.logInBtnGreen);
-        let results = await anna.getResults1();
+        let results = await anna.getErrorResults();
         expect(results).toContain("Sorry, unrecognized username or password.");
     });
 
@@ -44,7 +44,7 @@ describe ("Tests fo Login", () => {
         await anna.setInput(anna.usernameField,"username");
         await anna.setInput(anna.passwordField,"password");
         await anna.click(anna.logInBtnGreen);
-        let results = await anna.getResults1();
+        let results = await anna.getErrorResults();
         expect(results).toContain("Sorry, unrecognized username or password.");
     });
 
