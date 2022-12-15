@@ -27,8 +27,8 @@ export class Anna extends BasePage {
     qtyNumberField: By = By.xpath('//input[@class="form-text required"]');
     qtyField: By = By.css('#edit-items-0-qty');
     updateCartBtn: By = By.xpath('(//button[@id="edit-update"])[2]');
-
-
+    shippingPolicy: By = By.xpath('//a[text()="Shipping Policy"]');
+    returnPolicy: By = By.xpath('//a[text()="Return & Refund Policy"]');
 
     constructor() {
         super ({url:"https://thecuriousreaderbooks.indielite.org/"}) 

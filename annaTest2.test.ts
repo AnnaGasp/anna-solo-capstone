@@ -1,7 +1,3 @@
-//adding removing updating shopping cart
-// added to your shopping cart.
-//removed from your shopping cart.
-
 import{Anna} from "./annaPageObject";
 const AnnA = new Anna();
 
