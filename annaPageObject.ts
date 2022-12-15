@@ -17,12 +17,23 @@ export class Anna extends BasePage {
     searchResults: By = By.xpath ('//ol[@class="search-results apachesolr_search-results"]');
     searchContent: By = By.xpath('//div[@class="abaproduct-content"]');
     searchList: By = By.xpath ('//ol[@class="search-results apachesolr_search-results"]');
+    browseBooksTab: By = By.xpath('//a[text()="Browse Books"]');
+    bookCategoryArt: By =By.xpath('//a[text()="Art"]');
+    artBook: By = By.xpath('(//a[@href="/book/9780743201100"])[2]');
+    addToCartBtn: By = By.css ('#edit-add-to-cart');
+    cartMessage: By = By.xpath('//div[@class="messages status"]');
+    shoppingCart: By = By.xpath('(//a[@href="/cart"])[1]');
+    removeBtn: By = By.xpath('//button[@name="remove-0"]');
+    qtyNumberField: By = By.xpath('//input[@class="form-text required"]');
+    qtyField: By = By.css('#edit-items-0-qty');
+    updateCartBtn: By = By.xpath('(//button[@id="edit-update"])[2]');
+
 
 
     constructor() {
         super ({url:"https://thecuriousreaderbooks.indielite.org/"}) 
 };
-// a few getresults fo each test file
+
     async getAccountResults() {
         return await this.getText(this.myAccountTitle);
     };
@@ -41,5 +52,14 @@ export class Anna extends BasePage {
 
     async getListResults() {
         return await this.getText(this.searchList);
-    }
+    };
+
+    async getQuantity() {
+        return await this.driver.findElement(this.qtyField).getAttribute("value");
+    
+    };
+
+    async getCartResult() {
+        return await this.getText(this.cartMessage);
+    };
 };

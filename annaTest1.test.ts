@@ -1,4 +1,3 @@
-// 4 tests for login
 import{Anna} from "./annaPageObject";
 const anna = new Anna();
 
@@ -10,7 +9,7 @@ afterAll (async () => {
     await anna.driver.quit();
 });
 
-describe ("Tests fo Login", () => {
+describe ("Tests for Login", () => {
     test ("Login with valid credentials", async () => {
         await anna.click(anna.logInBtn);
         await anna.setInput(anna.usernameField,"DevmountainTest");

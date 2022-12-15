@@ -1,4 +1,3 @@
-//searching for books
 import {Anna} from "./annaPageObject"
 const aNNa = new Anna ();
 
