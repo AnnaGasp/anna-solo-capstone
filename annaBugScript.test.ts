@@ -7,6 +7,7 @@ describe("Bug for Return and Refund Policy hyperlink", () =>{
         await annA.navigate();
         await annA.click(annA.shippingPolicy);
         await annA.click(annA.returnPolicy);
+        await annA.driver.sleep(3000);
 
         await fs.writeFile(`${__dirname}/bugScreenshot.png`,
         await annA.driver.takeScreenshot(),"base64",
